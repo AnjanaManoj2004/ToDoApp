@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>To_do App</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Todo App</h1>
+        <!-- 11. Router -->
+        <router-link to="/">Home</router-link>
+        <router-link to="/completed">Completed Tasks</router-link>
+        
+        <!-- 11. Router -->
+        <router-view></router-view>
+        <!-- 8. Form Input Bindings -->
+        <div class="to_do">
+            <input v-model="new_Task" @keyup.enter="add_Task" placeholder="Add a Task">
+            <button @click="add_Task">Add</button>
+        </div>
+         <!-- 6. List Rendering -->
+        <ul>
+             <!-- 6. List Rendering -->
+            <li v-for="(task, index) in task_data" :key="index">
+                <input type="checkbox" v-model="task.completed">
+                <!-- 5. Class and Style Bindings -->
+                <span :class="{ completed: task.completed }">{{ task.text }}</span>
+                <!-- 7. Event Handling: Listening to Event -->
+                <button @click="removetask_data(index)">Remove</button>
+            </li>
+        </ul>
+
+        <!-- 4. Computed Properties -->
+        <p>Completed Tasks: {{ completedTaskCount }}</p>
+
+        <!-- 10. Components -->
+        <!-- Use props and slots to customize a component -->
+        <custom-component :message="customMessage">
+            <!-- 10c. Slots -->
+            <template #customSlot>
+                <!-- 1. Template Syntax -->
+                <p>Hello And Welcome</p>
+            </template>
+        </custom-component>
+    </div>
+
+    <!-- 3. Reactivity Fundamentals -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.0.11/dist/vue.global.prod.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
