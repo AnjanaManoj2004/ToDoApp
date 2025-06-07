@@ -28,25 +28,37 @@ git clone https://github.com/AnjanaManoj2004/ToDoApp.git
 ```
 ### 2. Clone or Download the Project
 Open in VS Code
+
 Make sure you have the Live Server extension installed.
 
 ### 3. Run with Live Server
 Right-click on ToDoApp.html
+
 Click "Open with Live Server"
+
 Your app should open automatically in your default browser.
 
 ### 4.Built With
 Vue.js 3 (CDN)
+
 HTML5
+
 CSS3
+
 Live Server (for local dev preview)
 
 ### 5.Features
+
 Add new tasks
+
 Remove individual tasks
+
 Mark as completed
+
 See number of tasks left
+
 "Remove All Tasks" button
+
 Basic Vue component usage
 
 ## Author
