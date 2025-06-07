@@ -9,9 +9,6 @@
 <body>
     <div id="app">
         <h1>Todo App</h1>
-        <router-link to="/">Home</router-link>
-        <router-link to="/completed">Completed Tasks</router-link>
-        <router-view></router-view>
         <div class="to_do">
             <input v-model="new_Task" @keyup.enter="add_Task" placeholder="Add a Task">
             <button @click="add_Task">Add</button>
