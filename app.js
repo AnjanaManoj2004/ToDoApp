@@ -1,17 +1,17 @@
 const app = Vue.createApp({
     data() {
         return {
-            // Task data for the To-Do list
+
             task_data: [],
             new_Task: "",
         };
     },
     methods: {
-        // Method to remove a task by index
+
         removetask_data(index) {
             this.task_data.splice(index, 1);
         },
-        // Method to add a new task
+
         add_Task() {
             if (this.new_Task.trim() !== "") {
                 this.task_data.push({ text: this.new_Task, completed: false });
@@ -32,7 +32,7 @@ const app = Vue.createApp({
         },
     },
     computed: {
-        // Computed property to count completed tasks
+
         completedTaskCount() {
             return this.task_data.filter(task => task.completed).length;
         },
@@ -52,5 +52,4 @@ const app = Vue.createApp({
     },
 });
 
-// Mount the Vue app
 app.mount("#app");
