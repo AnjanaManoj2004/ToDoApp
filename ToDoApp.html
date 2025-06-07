@@ -8,11 +8,18 @@
 </head>
 <body>
     <div id="app">
-        <h1>Todo App</h1>
+        <h1>To-Do App</h1>
+        <p>Let us show you the tasks you need to do!!</p>
+        <custom-component :message="customMessage">
+            <template #customSlot>
+                <p>Welcome to To-Do App</p>
+            </template>
+        </custom-component>
         <div class="to_do">
             <input v-model="new_Task" @keyup.enter="add_Task" placeholder="Add a Task">
             <button @click="add_Task">Add</button>
         </div>
+        <p>Tasks to Do: {{ tasksToDoCount }}</p>
         <ul>
             <li v-for="(task, index) in task_data" :key="index">
                 <input type="checkbox" v-model="task.completed">
@@ -21,11 +28,7 @@
             </li>
         </ul>
         <p>Completed Tasks: {{ completedTaskCount }}</p>
-        <custom-component :message="customMessage">
-            <template #customSlot>
-                <p>Hello And Welcome</p>
-            </template>
-        </custom-component>
+        <button @click="removeAllTasks" :disabled="task_data.length === 0">Remove All Tasks</button>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@3.0.11/dist/vue.global.prod.js"></script>
     <script src="app.js"></script>
