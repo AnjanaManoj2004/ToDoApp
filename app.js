@@ -37,19 +37,7 @@ const app = Vue.createApp({
             return this.task_data.filter(task => task.completed).length;
         },
     },
-    setup() {
-        const characterCount = Vue.ref(0);
-        const new_Task = Vue.ref("");
-
-        Vue.watch(new_Task, (newVal) => {
-            characterCount.value = newVal.length;
-        });
-
-        return {
-            characterCount,
-            new_Task,
-        };
-    },
+    
 });
 
 app.mount("#app");
