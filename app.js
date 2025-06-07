@@ -18,14 +18,15 @@ const app = Vue.createApp({
                 this.new_Task = "";
             }
         },
+        removeAllTasks() {
+        this.task_data = [];
+        }
     },
     components: {
         'custom-component': {
             props: ['message'],
             template: `
                 <div>
-                    <h2>Greetings</h2>
-                    <p>Hello and Welcome</p>
                     <slot name="customSlot"></slot>
                 </div>
             `,
@@ -37,6 +38,9 @@ const app = Vue.createApp({
             return this.task_data.filter(task => task.completed).length;
         },
     },
+    tasksToDoCount() {
+        return this.task_data.filter(task => !task.completed).length;
+    }
     
 });
 
